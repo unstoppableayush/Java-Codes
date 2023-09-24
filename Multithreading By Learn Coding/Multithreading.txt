@@ -1,0 +1,154 @@
+Q.What is Multithreading?With Example.
+Ans:-Multithreading is a process to execute multiple threads 
+at the same time without dependency of other thread is called 
+multithreading.
+It saves the time and increase the performance.
+
+Q.What is thread?
+Ans-Thread is a pre-defined class which is available in java.lang package.
+                                                      Thread is a
+basic unit of cpu and it is well known for independent execution.
+
+Q.How to create Thread in Java?
+Ans- 1>By extending Thread class
+     2>By implementing Runnable Interface
+    
+       1.By Extending Thread Class
+     """""""""""""""""""""""""""""
+//define a thread
+class A extends Thread {
+    
+    @override
+    public void run(){
+        //code;
+    }
+}
+class B{
+    public static void main(String args[]){
+        A t=new A();//main thread creats object of child class
+        t.start();//it calls run method,t thread excutes the run method
+        //code;//main thread excutes the code 
+    }
+}
+
+        2.By implementing Runnable interface
+        """""""""""""""""""""""""""""""""""""
+class A implements Runnable{
+    public void run(){
+        //code;
+    }
+}
+class B{
+    public static void main(String args[]){
+        A r=new A();
+        Thread t=new Thread(r);
+        t.start();
+    }
+}
+
+Q.What Thread Scheduler?
+Ans-Thread Scheduler is the part of jvm which executes multiple threads
+ on a single processor randomly.
+=> A component of Java that decides which thread to run or execute and
+ which thread to wait is called a thread scheduler in Java.
+=>if there is more than one thread in the runnable state, it is up to 
+the thread scheduler to pick one of the threads and ignore the other ones.
+
+It follows algoritm.
+1>FCFS
+2>SJF
+3>Round Robin
+4>Priority Sechduling  
+
+
+Q.What is thread life cycle?
+Ans->AS we know a thread is well knon for independent execution.
+During the life cycle a thread can move from different state.
+
+1> New State (Born)
+2> Runnable State(Ready)
+3> Running State(Execution)
+4> Waiting State (Blocked)
+5> Dead State (Exit)
+
+ BORN---t.start();-->READY---theadSchedular--->RUNNING--run();-->DEAD--t.stop()
+
+RUNNING STATE to BLocked State->
+t.suspend();
+t.join();
+t.sleep();
+t.wait();
+
+Q.What is Sleep Method?
+Ans-Sleep is a static method of thread class which throws checked 
+exception i.e InterrruptedException.
+                            The main purpose of sleep method to put
+a thread into temporary waiting state.
+
+Syntax-Thread.sleep(1000);
+ 
+ or, Thread t=new Thread();
+      t.sleep(1000);
+
+
+Q.What is join() ? Example..
+Ans-The main purpose of join method is to put the thread into 
+temporary waiting state, if we want to execute complete any 
+particular thread among all the threads available in the thread pool.
+
+=>Join method also throw a checked exception i.e InterruptedException.
+
+ex- A t1=new A();//3 times
+    A t2=new A();//3 times
+    A t3=new A();//3 times
+
+    t2.join();//t2 thread executes first and completly.
+
+
+
+Q.What is suspend() & resume() method ?
+
+Ans-Suspend():-The main purpose of suspend method is to put the thread 
+from running state to waiting state.
+
+Ex- A t1=new A();
+    A t2=new A();
+    A t3=new A();
+    
+    t1.start();
+    t2.start();//X
+    t3.start();
+
+    t2.suspend();
+
+Resume():- Resume method is used to resume a suspended thread from
+    waiting state to runnable state.
+
+Ex- t2.resume();
+
+
+Q.What is isAlive()? With Program.
+Ans- isAlive is a pre-defined method of thread class through which we
+can verify weather a thread isAlive or not.
+
+Note:-
+1> If thread isAlive then it will return true otherwise false.
+2> If we use isAlive method before the start method then then 
+it will print false but after the start method it will print true.
+
+
+Q.What is thread priority?
+Ans-In java it is possible to assign the priority of thread.
+                                                    To set these
+priority java thread clas has provided two predefined methods.
+
+1>setPriority()
+2>getPriority()
+
+The thread class has also provided three pre-defined final static
+variable and its value lie between 1 to 10.
+
+Thread.MIN_PRIORITY--->1
+Thread.NORM_PRIORITY--->5 //DEAFULT BY JVM
+Thread.MAX_PRIORITY--->10
+

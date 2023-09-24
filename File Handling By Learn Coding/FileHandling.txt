@@ -1,0 +1,28 @@
+
+ Q.What is File Handling?
+ Ans-File handling defines how we can read and write data
+ on a file.Java io Package contains all the classes through 
+ which we can perform all the input output operations in 
+ the file.
+  
+ Stream-Stream is the sequence of data.On the basis of 
+ java.io package all the devided into two stream.
+  
+ 1.Byte stream
+ 2.Character Stream-data read character by character
+
+ File Handling Methods:-
+ canRead() ,canWrite() ,createNewFile() ,delete() ,
+ exists() ,length() ,getName() ,getAbsolutePath() ,
+ mkdir() ,list() ,read() ,write() ,renameTo()
+
+ File Handling Classes:-
+ File ,FileReader ,FileWriter ,FileInputStream 
+ FileOutputStream ,BufferedInputStream ,BufferedOutputStream
+
+ Operations Of File:-
+ 1.Create
+ 2.Get File Information
+ 3.Read
+ 4.Write
+
