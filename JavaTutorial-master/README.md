@@ -71,6 +71,3 @@ Learn Java Programming, its basics and Fundamentals from scratch.
     - Custom Exception Class 
 18. Conclusion 
 
-## Authors
-
-* **Team Smartherd** 
